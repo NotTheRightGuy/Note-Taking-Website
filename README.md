@@ -12,5 +12,5 @@ These things are yet to be done
 
 - Keep the files saved in local directory for the time being
 - Add the notes to a database
-- Implement functions to delete the notes
+- -Implement functions to delete the notes-
 - Many more ..... ~_~
