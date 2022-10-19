@@ -148,3 +148,78 @@ body {
   height: 88vh;
   display: flex;
 }
+
+.note-watcher {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+}
+
+.note-watcher .note {
+  padding: 9px 12px;
+  animation: append-notes 1s ease;
+  position: relative;
+  z-index: 100;
+  top: 15%;
+  left: 8%;
+  border-radius: 12px;
+  height: 600px;
+  width: 85%;
+  background-color: #f8c4b4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.note-watcher .note-title {
+  font-size: 50px;
+  outline: 0;
+}
+
+.note-watcher .note-body {
+  outline: 0;
+  padding-left: 3px;
+  padding-top: 12px;
+  height: 87%;
+  font-size: 20px;
+  overflow: scroll;
+}
+.note-watcher .note-body::-webkit-scrollbar {
+  opacity: 0;
+  width: 0;
+}
+
+.edit-note,
+.delete-note,
+.hide-note {
+  border: 0;
+  position: absolute;
+  background-color: #f8c4b4;
+  height: 24px;
+  width: 24px;
+}
+
+.edit-note,
+.delete-note,
+.hide-note:hover {
+  cursor: pointer;
+}
+
+.hide-note {
+  top: 5px;
+  right: 10px;
+  background-image: url("./assets/icons8-multiply-24.png");
+}
+
+.delete-note {
+  top: 5px;
+  right: 50px;
+  background-image: url("./assets/icons8-trash-can-24.png");
+}
+
+.edit-note {
+  top: 5px;
+  right: 90px;
+  background-image: url("./assets/icons8-pencil-drawing-24.png");
+}
