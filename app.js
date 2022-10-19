@@ -23,7 +23,8 @@ const dateFormat = function () {
   const date = dateObj.getDate();
   const month = dateObj.getMonth();
   const year = dateObj.getFullYear();
-
+  dateDOM.style.fontSize = "24px";
+  dateDOM.style.color = "white";
   dateDOM.innerHTML = `📆 ${date} ${months[month]} ${year}`;
 };
 
@@ -39,6 +40,8 @@ const timeFormat = function () {
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
+  timeDOM.style.fontSize = "24px";
+  timeDOM.style.color = "white";
   timeDOM.innerHTML = `⏰${hour}:${minutes} ${prefix}`;
 };
 
@@ -177,7 +180,7 @@ document.body.addEventListener("click", (event) => {
       note.children[1].contentEditable = "true";
       const toast = document.createElement("div");
       toast.className = "toast";
-      toast.innerHTML = "Note now Editable!!";
+      toast.innerHTML = "note now editable!!";
       note.appendChild(toast);
       setInterval(() => {
         note.removeChild(toast);

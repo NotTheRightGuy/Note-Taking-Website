@@ -11,11 +11,11 @@ body {
 
 #add-btn {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 3px;
   padding: 0;
   height: 48px;
-  background-color: #e8ecbe;
+  background-color: #a5cea1;
   border: 0;
   border-radius: 25px;
   transition: transform 0.1s ease-in-out;
@@ -29,8 +29,8 @@ body {
 }
 
 #header {
-  height: 2em;
-  background-color: #e5ebb2;
+  height: 1.5em;
+  background-color: rgb(34, 139, 34);
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
