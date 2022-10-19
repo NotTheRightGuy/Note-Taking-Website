@@ -175,6 +175,13 @@ document.body.addEventListener("click", (event) => {
     editNoteButton.addEventListener("click", () => {
       note.children[0].contentEditable = "true";
       note.children[1].contentEditable = "true";
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.innerHTML = "Note now Editable!!";
+      note.appendChild(toast);
+      setInterval(() => {
+        note.removeChild(toast);
+      }, 3000);
     });
   }
 });
