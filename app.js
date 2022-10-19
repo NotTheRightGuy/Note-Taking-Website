@@ -4,22 +4,21 @@ const addbtn = document.getElementById("add-btn");
 const noteShelf = document.getElementsByClassName("notes-collection")[0];
 const newNoteCreator = document.getElementsByClassName("new-note-creator")[0];
 const wrapper = document.getElementsByClassName("wrapper")[0];
-
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 const dateFormat = function () {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   const dateObj = new Date();
   const date = dateObj.getDate();
   const month = dateObj.getMonth();
@@ -96,11 +95,25 @@ addbtn.addEventListener("click", () => {
   saveBtn.className = "new-note-save";
   saveBtn.innerHTML = "save";
 
+  const date = document.createElement("div");
+  date.className = "date";
+  today = new Date();
+  date.innerHTML = `${today.getDate()} ${
+    months[today.getMonth()]
+  } ${today.getFullYear()}`;
+
+  const time = document.createElement("div");
+  time.innerHTML = `${today.getHours()}:${today.getMinutes()}`;
+  time.className = "time";
+
   wrapper.style.filter = "blur(2px)";
   newNoteReference.appendChild(noteTitle);
   newNoteReference.appendChild(noteBody);
   newNoteReference.appendChild(hideNoteButton);
+  newNoteReference.appendChild(date);
+  newNoteReference.appendChild(time);
   newNoteReference.appendChild(saveBtn);
+  newNoteReference.appendChild(hideNoteButton);
   newNoteCreator.append(newNoteReference);
 
   saveBtn.addEventListener("click", () => {
@@ -114,6 +127,7 @@ addbtn.addEventListener("click", () => {
     addbtn.style.cssText += `opacity:1;transition: opacity 1s`;
     noteInstanceCopy.removeChild(noteInstanceCopy.lastChild);
     noteInstanceCopy.removeChild(noteInstanceCopy.lastChild);
+    noteInstanceCopy.lastChild.style.display = "none";
     noteShelf.appendChild(noteInstanceCopy);
     newNoteReference.remove();
   });
@@ -122,6 +136,7 @@ addbtn.addEventListener("click", () => {
 document.body.addEventListener("click", (event) => {
   if (event.target.className == "note") {
     const note = event.target;
+    note.lastChild.style.display = "block";
     const wrapper = document.getElementsByClassName("wrapper")[0];
     wrapper.style.filter = "blur(3px)";
     const noteWatcher = document.getElementsByClassName("note-watcher")[0];
@@ -145,6 +160,9 @@ document.body.addEventListener("click", (event) => {
       note.removeChild(note.lastChild);
       wrapper.style.filter = "blur(0px)";
       noteWatcher.style.cssText = "display:none";
+      note.children[0].contentEditable = "false";
+      note.children[1].contentEditable = "false";
+      note.lastChild.style.display = "none";
       noteCollection.append(note);
     });
 

@@ -185,6 +185,23 @@ body {
   font-size: 20px;
   overflow: scroll;
 }
+
+.note-watcher .time {
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 110px;
+  opacity: 0.3;
+}
+
+.note-watcher .date {
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  opacity: 0.3;
+}
+
 .note-watcher .note-body::-webkit-scrollbar {
   opacity: 0;
   width: 0;
@@ -222,4 +239,28 @@ body {
   top: 5px;
   right: 90px;
   background-image: url("./assets/icons8-pencil-drawing-24.png");
+}
+
+.new-note-reference .date {
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  opacity: 0.3;
+}
+
+.new-note-reference .time {
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 110px;
+  opacity: 0.3;
+}
+
+.notes-collection .date {
+  position: absolute;
+  font-size: 12px;
+  top: 0;
+  right: 5px;
+  opacity: 0.2;
 }
