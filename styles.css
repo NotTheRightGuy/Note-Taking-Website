@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap");
+
+* {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+body {
+  position: relative;
+  background-color: rgb(188, 226, 158);
+}
+
+#add-btn {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  padding: 0;
+  height: 48px;
+  background-color: #e8ecbe;
+  border: 0;
+  border-radius: 25px;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#add-btn:hover {
+  cursor: pointer;
+  transform: scale(105%);
+  transition: transform 0.1s ease-in-out;
+}
+
+#header {
+  height: 2em;
+  background-color: #e5ebb2;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 34px;
+  align-items: center;
+  vertical-align: top;
+}
+
+@keyframes append-notes {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.new-note-creator .new-note-reference {
+  padding: 9px 12px;
+  animation: append-notes 1s ease;
+  position: absolute;
+  z-index: 100;
+  top: 15%;
+  left: 8%;
+  border-radius: 12px;
+  height: 450px;
+  width: 85%;
+  background-color: #f8c4b4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.new-note-creator .new-note-save {
+  background-color: #ff8787;
+  position: absolute;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 10px;
+  height: 30px;
+  width: 70px;
+  bottom: 7px;
+  right: 7px;
+  transition: transform 0.2s ease;
+}
+
+.new-note-creator .new-note-save:hover {
+  cursor: pointer;
+  transform: scale(110%);
+}
+
+.new-note-creator .new-note-title {
+  font-size: 50px;
+  opacity: 0.3;
+  outline: 0;
+}
+
+.new-note-creator .new-note-body {
+  outline: 0;
+  padding-left: 3px;
+  padding-top: 12px;
+  height: 87%;
+  font-size: 20px;
+  opacity: 0.3;
+  overflow: scroll;
+}
+
+.new-note-creator .new-note-body::-webkit-scrollbar {
+  opacity: 0;
+  width: 0;
+}
+
+.notes-collection .note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) -1rem 0 3rem;
+  animation: append-notes 1s ease;
+  margin: 10px 10px;
+  padding: 5px 5px;
+  background-color: #f8c4b4;
+  border-radius: 12px;
+  height: 300px;
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.notes-collection .note:not(:first-child) {
+  margin-left: -150px;
+}
+
+.notes-collection .note-title {
+  outline: 0;
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.notes-collection .note:hover {
+  transform: translateY(-2rem);
+}
+
+.notes-collection .note:not(:first-child) {
+  margin-left: -180px;
+}
+
+.notes-collection .note-body {
+  outline: 0;
+}
+
+.notes-collection {
+  height: 88vh;
+  display: flex;
+}
