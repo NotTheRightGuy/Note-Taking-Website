@@ -126,6 +126,7 @@ body {
 }
 
 .notes-collection .note-title {
+  cursor: default;
   outline: 0;
   font-size: 25px;
   font-weight: bold;
@@ -142,6 +143,7 @@ body {
 
 .notes-collection .note-body {
   outline: 0;
+  cursor: default;
 }
 
 .notes-collection {
@@ -258,6 +260,7 @@ body {
 }
 
 .notes-collection .date {
+  cursor: default;
   position: absolute;
   font-size: 12px;
   top: 0;
