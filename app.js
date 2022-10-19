@@ -75,6 +75,12 @@ addbtn.addEventListener("click", () => {
     }
   });
 
+  hideNoteButton.addEventListener("click", () => {
+    wrapper.style.filter = "blur(0)";
+    addbtn.style.opacity = 1;
+    newNoteCreator.removeChild(newNoteCreator.lastChild);
+  });
+
   const noteBody = document.createElement("div");
   noteBody.className = "new-note-body";
   noteBody.contentEditable = "true";
